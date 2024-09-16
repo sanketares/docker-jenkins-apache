@@ -4,10 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Clone your repository if using Git
-                // git 'https://github.com/your-repo/apache-web-app.git'
-                
-                // For a local setup, this step might not be necessary
+                checkout scm
             }
         }
         
