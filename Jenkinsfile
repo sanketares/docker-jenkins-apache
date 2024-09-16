@@ -11,7 +11,12 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('apache-web-app')
+                    def imageName = 'apache-web-app'
+                    def imageTag = 'latest'
+
+                    // Build the Docker image
+                    docker.build("${imageName}:${imageTag}", "-f Dockerfile .")
+                    echo 'build done'
                 }
             }
         }
